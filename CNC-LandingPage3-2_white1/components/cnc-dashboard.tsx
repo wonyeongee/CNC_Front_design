@@ -2223,7 +2223,7 @@ export function CNCDashboard() {
                         size="sm"
                         variant="outline"
                         onClick={handleSearch}
-                        className="w-full border border-blue-400/50 text-blue-400 hover:bg-blue-500/20 hover:shadow-[0_0_10px_rgba(59,130,246,0.4)] transition-all"
+                        className="w-full border-2 border-[#82c7ff] text-[#0f4c81] hover:bg-[#eaf6ff] dark:border-blue-400/50 dark:text-blue-400 dark:hover:bg-blue-500/20 dark:hover:shadow-[0_0_10px_rgba(59,130,246,0.4)] transition-all"
                       >
                         조회
                       </Button>
@@ -2234,9 +2234,9 @@ export function CNCDashboard() {
                       size="sm"
                       variant="outline"
                       onClick={handleSearchToday}
-                      className="w-full border border-cyan-400/50 text-cyan-400 hover:bg-cyan-500/10 hover:shadow-[0_0_10px_rgba(34,211,238,0.4)] transition-all"
+                      className="w-full border-2 border-[#82c7ff] text-[#0f4c81] hover:bg-[#eaf6ff] dark:border-cyan-400/50 dark:text-cyan-400 dark:hover:bg-cyan-500/10 dark:hover:shadow-[0_0_10px_rgba(34,211,238,0.4)] transition-all"
                     >
-                      <CalendarIcon className="h-4 w-4 mr-2 text-[#111111] dark:text-white" />
+                      <CalendarIcon className="h-4 w-4 mr-2 text-[#0f4c81] dark:text-white" />
                       오늘 날짜로 조회
                     </Button>
 
@@ -2252,7 +2252,7 @@ export function CNCDashboard() {
                           setStartDateInput("")
                           setEndDateInput("")
                         }}
-                        className="w-full border border-red-400/50 text-red-400 hover:bg-red-500/10 hover:shadow-[0_0_10px_rgba(239,68,68,0.4)] transition-all"
+                        className="w-full border-2 border-red-400 text-red-600 hover:bg-red-50 dark:border-red-400/50 dark:text-red-400 dark:hover:bg-red-500/10 dark:hover:shadow-[0_0_10px_rgba(239,68,68,0.4)] transition-all"
                       >
                         필터 초기화
                       </Button>
@@ -2260,15 +2260,15 @@ export function CNCDashboard() {
                   </div>
 
                   {/* 미확인/확인된 물품 탭 */}
-                  <div className="flex gap-2 border-t border-zinc-800 pt-3">
+                  <div className="flex gap-2 border-t border-[#d6d6d6] dark:border-zinc-800 pt-3">
                     <Button
                       size="sm"
                       variant="outline"
                       onClick={() => setShowConfirmedPanel(false)}
                       className={`flex-1 transition-all ${
                         !showConfirmedPanel
-                          ? "border-orange-500/50 bg-orange-500/10 text-orange-400"
-                          : "border-orange-400/50 text-orange-400 hover:bg-orange-500/10 hover:shadow-[0_0_10px_rgba(251,146,60,0.3)]"
+                          ? "border-[#82c7ff] bg-[#eaf6ff] text-[#0f4c81] dark:border-orange-500/50 dark:bg-orange-500/10 dark:text-orange-400"
+                          : "border-[#82c7ff]/50 text-[#0f4c81] hover:bg-[#eaf6ff] dark:border-orange-400/50 dark:text-orange-400 dark:hover:bg-orange-500/10 dark:hover:shadow-[0_0_10px_rgba(251,146,60,0.3)]"
                       }`}
                     >
                       <AlertCircle className="h-4 w-4 mr-2" />
@@ -2280,8 +2280,8 @@ export function CNCDashboard() {
                       onClick={() => setShowConfirmedPanel(true)}
                       className={`flex-1 transition-all ${
                         showConfirmedPanel
-                          ? "border-green-500/50 bg-green-500/10 text-green-400"
-                          : "border-green-400/50 text-green-400 hover:bg-green-500/10 hover:shadow-[0_0_10px_rgba(34,197,94,0.3)]"
+                          ? "border-[#82c7ff] bg-[#f2f2f2] text-[#111111] dark:border-green-500/50 dark:bg-green-500/10 dark:text-green-400"
+                          : "border-[#bcbcbc] text-[#111111] hover:bg-[#f2f2f2] dark:border-green-400/50 dark:text-green-400 dark:hover:bg-green-500/10 dark:hover:shadow-[0_0_10px_rgba(34,197,94,0.3)]"
                       }`}
                     >
                       <CheckCircle className="h-4 w-4 mr-2" />
@@ -2300,7 +2300,7 @@ export function CNCDashboard() {
                             variant="outline"
                             onClick={handleDeleteSelectedDefects}
                             disabled={selectedForDeletion.size === 0 && selectedFoldersForDeletion.size === 0}
-                            className="flex-1 border-red-500/50 text-red-400 hover:bg-red-500/10 bg-transparent"
+                            className="flex-1 border-2 border-red-400 text-red-600 hover:bg-red-50 dark:border-red-500/50 dark:text-red-400 dark:hover:bg-red-500/10 bg-transparent"
                           >
                             <Trash className="h-3 w-3 mr-1" />
                             선택 삭제
@@ -2309,7 +2309,7 @@ export function CNCDashboard() {
                             size="sm"
                             variant="outline"
                             onClick={handleDeleteAllConfirmedDefects}
-                            className="flex-1 border-red-500/50 text-red-400 hover:bg-red-500/10 bg-transparent"
+                            className="flex-1 border-2 border-red-400 text-red-600 hover:bg-red-50 dark:border-red-500/50 dark:text-red-400 dark:hover:bg-red-500/10 bg-transparent"
                           >
                             <Trash2 className="h-3 w-3 mr-1" />
                             전체 삭제
@@ -2324,23 +2324,23 @@ export function CNCDashboard() {
                         const isExpanded = expandedConfirmedCnc[cncId]
 
                         return (
-                          <div key={cncId} className="border border-green-700/50 rounded-lg overflow-hidden">
+                          <div key={cncId} className="border border-[#bcbcbc] dark:border-green-700/50 rounded-lg overflow-hidden defect-folder-confirmed">
                             {/* 폴더 헤더 */}
                             <button
                               onClick={() => setExpandedConfirmedCnc((prev) => ({ ...prev, [cncId]: !prev[cncId] }))}
-                              className="w-full bg-green-900/20 p-3 flex items-center justify-between hover:bg-green-900/30 transition-colors"
+                              className="w-full bg-[#f2f2f2] dark:bg-green-900/20 p-3 flex items-center justify-between hover:bg-[#e8e8e8] dark:hover:bg-green-900/30 transition-colors"
                             >
                               <div className="flex items-center gap-2">
                                 {isExpanded ? (
-                                  <ChevronDown className="h-4 w-4 text-green-400" />
+                                  <ChevronDown className="h-4 w-4 text-[#111111] dark:text-green-400" />
                                 ) : (
-                                  <ChevronRight className="h-4 w-4 text-green-400" />
+                                  <ChevronRight className="h-4 w-4 text-[#111111] dark:text-green-400" />
                                 )}
                                 <CheckCircle className="h-4 w-4 text-[#82c7ff] dark:text-green-400" />
                                 <span className="font-medium text-[#111111] dark:text-white">{cncName}</span>
                               </div>
                               <div className="flex items-center gap-2">
-                                <span className="text-xs bg-[#82c7ff]/20 dark:bg-green-500/20 text-[#82c7ff] dark:text-green-400 px-2 py-1 rounded">
+                                <span className="text-xs bg-[#82c7ff]/30 dark:bg-green-500/20 text-[#0f4c81] dark:text-green-400 px-2 py-1 rounded font-semibold">
                                   {cncDefects.length}건
                                 </span>
                                 {/* 폴더 삭제 체크박스 */}
@@ -2372,11 +2372,11 @@ export function CNCDashboard() {
 
                             {/* 폴더 내 불량품 목록 */}
                             {isExpanded && (
-                              <div className="divide-y divide-zinc-700">
+                              <div className="divide-y divide-[#cccccc] dark:divide-zinc-700">
                                 {cncDefects.map((defect) => (
                                   <div
                                     key={defect.id}
-                                    className="p-3 hover:bg-gray-200 dark:hover:bg-zinc-800 transition-colors flex items-center gap-3"
+                                    className="p-3 bg-white dark:bg-transparent hover:bg-[#f8f8f8] dark:hover:bg-zinc-800 transition-colors flex items-center gap-3 border-l-2 border-transparent hover:border-[#82c7ff] dark:hover:border-transparent"
                                   >
                                     {/* 개별 삭제 체크박스 */}
                                     <div
@@ -2394,12 +2394,12 @@ export function CNCDashboard() {
                                       }}
                                       className={`w-5 h-5 rounded border-2 cursor-pointer flex items-center justify-center transition-all ${
                                         selectedForDeletion.has(defect.id)
-                                          ? "bg-cyan-500 border-cyan-400"
-                                          : "border-cyan-400/50 hover:border-cyan-400 hover:shadow-[0_0_5px_rgba(34,211,238,0.4)]"
+                                          ? "bg-[#82c7ff] border-[#0f4c81] dark:bg-cyan-500 dark:border-cyan-400"
+                                          : "border-[#82c7ff] hover:border-[#0f4c81] hover:shadow-[0_0_5px_rgba(130,199,255,0.4)] dark:border-cyan-400/50 dark:hover:border-cyan-400 dark:hover:shadow-[0_0_5px_rgba(34,211,238,0.4)]"
                                       }`}
                                     >
                                       {selectedForDeletion.has(defect.id) && (
-                                        <Check className="h-3 w-3 text-black" strokeWidth={3} />
+                                        <Check className="h-3 w-3 text-white dark:text-black" strokeWidth={3} />
                                       )}
                                     </div>
 
@@ -2465,7 +2465,7 @@ export function CNCDashboard() {
                             variant="outline"
                             onClick={handleMoveSelectedToConfirmed}
                             disabled={selectedForConfirmation.size === 0}
-                            className="flex-1 border-green-500/50 text-green-400 hover:bg-green-500/10 bg-transparent"
+                            className="flex-1 border-2 border-[#82c7ff] text-[#0f4c81] hover:bg-[#eaf6ff] dark:border-green-500/50 dark:text-green-400 dark:hover:bg-green-500/10 bg-transparent"
                           >
                             <CheckCircle className="h-3 w-3 mr-1" />
                             확인된 물품으로 넘기기
@@ -2480,23 +2480,23 @@ export function CNCDashboard() {
                         const isExpanded = expandedDefectCnc[cncId]
                       
                       return (
-                        <div key={cncId} className="border border-zinc-700 rounded-lg overflow-hidden">
+                        <div key={cncId} className="border border-[#82c7ff] dark:border-zinc-700 rounded-lg overflow-hidden defect-folder-unconfirmed">
                             {/* 폴더 헤더 */}
                             <button
                               onClick={() => setExpandedDefectCnc((prev) => ({ ...prev, [cncId]: !prev[cncId] }))}
-                              className="w-full bg-gray-100 dark:bg-zinc-800/50 p-3 flex items-center justify-between hover:bg-gray-200 dark:hover:bg-zinc-800 transition-colors"
+                              className="w-full bg-[#eaf6ff] dark:bg-zinc-800/50 p-3 flex items-center justify-between hover:bg-[#d4edff] dark:hover:bg-zinc-800 transition-colors"
                             >
                             <div className="flex items-center gap-2">
                                 {isExpanded ? (
-                                  <ChevronDown className="h-4 w-4 text-[#111111] dark:text-zinc-400" />
+                                  <ChevronDown className="h-4 w-4 text-[#0f4c81] dark:text-zinc-400" />
                                 ) : (
-                                  <ChevronRight className="h-4 w-4 text-[#111111] dark:text-zinc-400" />
+                                  <ChevronRight className="h-4 w-4 text-[#0f4c81] dark:text-zinc-400" />
                                 )}
-                                <AlertCircle className="h-4 w-4 text-[#82c7ff] dark:text-red-400" />
-                              <span className="font-medium text-[#111111] dark:text-white">{cncName}</span>
+                                <AlertCircle className="h-4 w-4 text-[#0f4c81] dark:text-red-400" />
+                              <span className="font-medium text-[#0f4c81] dark:text-white">{cncName}</span>
                             </div>
                               <div className="flex items-center gap-2">
-                            <span className="text-xs bg-[#82c7ff]/20 dark:bg-red-500/20 text-[#82c7ff] dark:text-red-400 px-2 py-1 rounded">
+                            <span className="text-xs bg-[#2b6cb0] dark:bg-red-500/20 text-white dark:text-red-400 px-2 py-1 rounded font-semibold">
                               {cncDefects.length}건
                             </span>
                                 {/* 폴더 전체 확인 화살표 버튼 */}
@@ -2507,18 +2507,18 @@ export function CNCDashboard() {
                                   }}
                                   className="w-4 h-4 cursor-pointer hover:opacity-70"
                                 >
-                                  <ArrowRight className="h-4 w-4 text-green-400" />
+                                  <ArrowRight className="h-4 w-4 text-[#0f4c81] dark:text-green-400" />
                           </div>
                               </div>
                             </button>
 
                             {/* 폴더 내 불량품 목록 */}
                             {isExpanded && (
-                          <div className="divide-y divide-zinc-700">
+                          <div className="divide-y divide-[#cccccc] dark:divide-zinc-700">
                                 {cncDefects.map((defect) => (
                                   <div
                                 key={defect.id}
-                                    className="p-3 hover:bg-gray-200 dark:hover:bg-zinc-800 transition-colors flex items-center gap-3"
+                                    className="p-3 bg-white dark:bg-transparent hover:bg-[#f0f8ff] dark:hover:bg-zinc-800 transition-colors flex items-center gap-3 border-l-2 border-transparent hover:border-[#82c7ff] dark:hover:border-transparent"
                                   >
                                     {/* 개별 확인 체크박스 */}
                                     <div
@@ -2536,12 +2536,12 @@ export function CNCDashboard() {
                                       }}
                                       className={`w-5 h-5 rounded-full border-2 cursor-pointer flex items-center justify-center transition-all ${
                                         selectedForConfirmation.has(defect.id)
-                                          ? "bg-cyan-500/20 border-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.6)]"
-                                          : "border-cyan-400/50 hover:border-cyan-400 hover:shadow-[0_0_5px_rgba(34,211,238,0.4)]"
+                                          ? "bg-[#82c7ff] border-[#0f4c81] shadow-[0_0_10px_rgba(130,199,255,0.6)] dark:bg-cyan-500/20 dark:border-cyan-400 dark:shadow-[0_0_10px_rgba(34,211,238,0.6)]"
+                                          : "border-[#82c7ff] hover:border-[#0f4c81] hover:shadow-[0_0_5px_rgba(130,199,255,0.4)] dark:border-cyan-400/50 dark:hover:border-cyan-400 dark:hover:shadow-[0_0_5px_rgba(34,211,238,0.4)]"
                                       }`}
                                     >
                                       {selectedForConfirmation.has(defect.id) && (
-                                        <Check className="h-3 w-3 text-cyan-400" strokeWidth={3} />
+                                        <Check className="h-3 w-3 text-white dark:text-cyan-400" strokeWidth={3} />
                                       )}
                                     </div>
 
@@ -2583,10 +2583,10 @@ export function CNCDashboard() {
         <div className="fixed inset-0 flex items-center justify-center z-50 p-4" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
           <div className="bg-white dark:bg-zinc-900 border border-[#82c7ff] dark:border-zinc-700 rounded-lg w-[600px] max-h-[80vh] overflow-hidden flex flex-col">
             {/* 모달 헤더 */}
-            <div className="p-6 border-b border-[#82c7ff] dark:border-zinc-800">
+            <div className="p-6 border-b border-[#82c7ff] dark:border-zinc-800 bg-[#eaf6ff] dark:bg-transparent">
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="text-lg font-semibold text-[#111111] dark:text-white">이상값 상세 분석</h3>
+                  <h3 className="text-lg font-semibold text-[#0f4c81] dark:text-white">이상값 상세 분석</h3>
                   <p className="text-sm text-[#111111] dark:text-zinc-400 mt-1">
                     {selectedDefect.cncName} - 제품 #{selectedDefect.productId}
                   </p>
@@ -2607,23 +2607,23 @@ export function CNCDashboard() {
               <div className="space-y-6">
                 <div className="grid grid-cols-2 gap-4 text-sm">
                 <div>
-                    <span className="text-muted-foreground">발생 시간</span>
-                    <p className="font-medium text-foreground mt-1">
+                    <span className="text-[#666666] dark:text-muted-foreground">발생 시간</span>
+                    <p className="font-medium text-[#111111] dark:text-foreground mt-1">
                       {selectedDefect.timestamp.toLocaleString("ko-KR")}
                     </p>
                   </div>
                   <div>
-                    <span className="text-muted-foreground">제품 ID</span>
-                    <p className="font-medium font-mono text-foreground mt-1">
+                    <span className="text-[#666666] dark:text-muted-foreground">제품 ID</span>
+                    <p className="font-medium font-mono text-[#111111] dark:text-foreground mt-1">
                       {selectedDefect.productId}
                     </p>
                   </div>
                 </div>
 
                 {/* feature 이상값 표시 */}
-                <div className="border-t border-border pt-4">
-                  <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                    <TrendingUp className="h-4 w-4" />
+                <div className="border-t border-[#d6d6d6] dark:border-border pt-4">
+                  <h4 className="font-semibold text-[#111111] dark:text-foreground mb-3 flex items-center gap-2">
+                    <TrendingUp className="h-4 w-4 text-[#111111] dark:text-foreground" />
                     측정 항목 및 이상값
                   </h4>
 
@@ -2743,12 +2743,12 @@ export function CNCDashboard() {
                           className={cn(
                             "p-4 rounded-lg border",
                             featureIsAbnormal
-                              ? "bg-red-500/10 border-red-500/50"
-                              : "bg-secondary/30 border-border",
+                              ? "bg-red-500/10 dark:bg-red-500/10 border-red-500/50 dark:border-red-500/50"
+                              : "bg-[#fafafa] dark:bg-secondary/30 border-[#cccccc] dark:border-border",
                           )}
                         >
                           <div className="flex items-center justify-between mb-2">
-                            <span className="font-medium text-foreground">{feature.name}</span>
+                            <span className="font-medium text-[#111111] dark:text-foreground">{feature.name}</span>
                             {featureIsAbnormal && (
                               <span className="text-xs bg-red-500 text-white px-2 py-1 rounded">
                                 이상
@@ -2759,13 +2759,13 @@ export function CNCDashboard() {
                           <div className="grid grid-cols-2 gap-4 text-sm">
                             {/* 측정값 */}
                             <div>
-                              <span className="text-muted-foreground">측정값</span>
+                              <span className="text-[#666666] dark:text-muted-foreground">측정값</span>
                               <p
                                 className={cn(
                                   "font-mono mt-1",
                                   featureIsAbnormal
                                     ? "text-red-500 font-semibold"
-                                    : "text-foreground",
+                                    : "text-[#111111] dark:text-foreground",
                                 )}
                               >
                                 {feature.value} {feature.unit || ''}
@@ -2773,7 +2773,7 @@ export function CNCDashboard() {
 
                               {/* ✅ 평균/중앙값 표시(값이 있을 때만) */}
                               {mean !== null && median !== null && (
-                                <div className="text-xs text-muted-foreground mt-2 space-y-1">
+                                <div className="text-xs text-[#666666] dark:text-muted-foreground mt-2 space-y-1">
                                   <p>평균: {mean}</p>
                                   <p>중앙값: {median}</p>
                           </div>
@@ -2782,14 +2782,14 @@ export function CNCDashboard() {
 
                             {/* 정상 범위 */}
                             <div>
-                              <span className="text-muted-foreground">정상 범위</span>
-                              <p className="font-mono text-foreground mt-1">
+                              <span className="text-[#666666] dark:text-muted-foreground">정상 범위</span>
+                              <p className="font-mono text-[#111111] dark:text-foreground mt-1">
                                 {normalMin} ~ {normalMax} {feature.unit || ''}
                               </p>
 
                               {/* ✅ 최소/최대도 같이 표기(값이 있을 때만) */}
                               {mean !== null && median !== null && (
-                                <div className="text-xs text-muted-foreground mt-2 space-y-1">
+                                <div className="text-xs text-[#666666] dark:text-muted-foreground mt-2 space-y-1">
                                   <p>최소값: {normalMin}</p>
                                   <p>최대값: {normalMax}</p>
                                 </div>
@@ -2893,8 +2893,8 @@ export function CNCDashboard() {
             </div>
 
             {/* 확인 버튼 */}
-            <div className="p-6 border-t border-[#82c7ff] dark:border-zinc-800">
-              <Button className="w-full" onClick={() => setShowDefectDetail(false)}>
+            <div className="p-6 border-t border-[#d6d6d6] dark:border-zinc-800">
+              <Button className="w-full border-2 border-[#82c7ff] dark:border-transparent bg-white dark:bg-primary text-[#0f4c81] dark:text-primary-foreground hover:bg-[#eaf6ff] dark:hover:bg-primary/90" onClick={() => setShowDefectDetail(false)}>
                 확인
               </Button>
             </div>
