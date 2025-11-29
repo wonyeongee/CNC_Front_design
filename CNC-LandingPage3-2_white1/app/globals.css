@@ -1,0 +1,515 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light Mode (기본값) */
+  --bg: #FFFFFF;
+  --bg-secondary: #F5F5F5;
+  --card: #FFFFFF;
+  --sidebar: #F9F9F9;
+  --text: #1A1A1A;
+  --text-secondary: #666666;
+  --primary: #82c7ff;
+  --primary-hover: #6bb5ff;
+  --primary-dark: #5ba3e6;
+  --border: #E0E0E0;
+  --neon-glow: rgba(130, 199, 255, 0.6);
+  --neon-glow-strong: rgba(130, 199, 255, 0.9);
+  --neon-glow-subtle: rgba(130, 199, 255, 0.3);
+  
+  /* CNC Landing Page Colors - Light Mode */
+  --cnc-black: #FFFFFF;
+  --cnc-cobalt: #82c7ff;
+  --cnc-silver: #1A1A1A;
+  --cnc-grid: rgba(0, 0, 0, 0.05);
+  --white-silver: #1A1A1A;
+  --premium-blue: #82c7ff;
+  --premium-blue-light: #9dd4ff;
+  --premium-blue-bright: #b8e1ff;
+  --premium-blue-deep: #6bb5ff;
+  --premium-blue-dark: #5ba3e6;
+  
+  /* Dashboard theme variables - Light Mode */
+  --background: #FFFFFF;
+  --foreground: #1A1A1A;
+  --card-foreground: #1A1A1A;
+  --popover: #FFFFFF;
+  --popover-foreground: #1A1A1A;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F5F5F5;
+  --secondary-foreground: #1A1A1A;
+  --muted: #F5F5F5;
+  --muted-foreground: #666666;
+  --accent: #E8F4FD;
+  --accent-foreground: #1A1A1A;
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+  --success: #10B981;
+  --success-foreground: #FFFFFF;
+  --input: #F5F5F5;
+  --ring: #82c7ff;
+  --chart-1: #82c7ff;
+  --chart-2: #60A5FA;
+  --chart-3: #3B82F6;
+  --chart-4: #2563EB;
+  --chart-5: #1E40AF;
+  --radius: 0.5rem;
+  --sidebar-foreground: #1A1A1A;
+  --sidebar-primary: #82c7ff;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #E8F4FD;
+  --sidebar-accent-foreground: #1A1A1A;
+  --sidebar-border: #E0E0E0;
+  --sidebar-ring: #82c7ff;
+  
+  /* CNC Animation Colors - Light Mode */
+  --product-raw: #dcdcdc;
+  --product-raw-border: #b0b0b0;
+  --rail-line: #3c3c3c;
+  --rail-start: #10B981;
+  --rail-end: #EF4444;
+  --rail-cnc-label: #82c7ff;
+  
+  /* Light Mode 전용 색상 변수 */
+  --light-product-block: #dcdcdc;
+  --light-product-block-border: #b0b0b0;
+  --light-rail-line: #3c3c3c;
+  --light-rail-start-text: #111111;
+  --light-rail-end-text: #111111;
+  --light-defect-text: #111111;
+  --light-defect-time-text: #111111;
+  --light-confirmed-text: #111111;
+  --light-confirmed-time-text: #111111;
+  --light-chatbot-text: #111111;
+  --light-chatbot-bg: #ffffff;
+  --light-chatbot-border: #82c7ff;
+  --light-chatbot-input-border: #82c7ff;
+  --light-cnc-button-border: #3c3c3c;
+  --light-cnc-button-text: #111111;
+}
+
+.dark {
+  /* Dark Mode - 원래 색상 유지 */
+  --bg: #0a0a0a;
+  --bg-secondary: #1a1a1a;
+  --card: #0a0a0a;
+  --sidebar: #1a1a1a;
+  --text: #E5E7EB;
+  --text-secondary: #9CA3AF;
+  --primary: #0047ab;
+  --primary-hover: #0066FF;
+  --primary-dark: #003380;
+  --border: #333333;
+  --neon-glow: rgba(0, 71, 171, 0.6);
+  --neon-glow-strong: rgba(0, 71, 171, 0.9);
+  --neon-glow-subtle: rgba(0, 71, 171, 0.3);
+  
+  /* CNC Landing Page Colors - Dark Mode */
+  --cnc-black: #0a0a0a;
+  --cnc-cobalt: #0047ab;
+  --cnc-silver: #c0c0c0;
+  --cnc-grid: rgba(255, 255, 255, 0.05);
+  --white-silver: #E5E7EB;
+  --premium-blue: #2563EB;
+  --premium-blue-light: #3B82F6;
+  --premium-blue-bright: #60A5FA;
+  --premium-blue-deep: #1E40AF;
+  --premium-blue-dark: #1E3A8A;
+  
+  /* Dashboard theme variables - Dark Mode */
+  --background: #0a0a0a;
+  --foreground: #E5E7EB;
+  --card: #0a0a0a;
+  --card-foreground: #E5E7EB;
+  --popover: #0a0a0a;
+  --popover-foreground: #E5E7EB;
+  --primary: #0047ab;
+  --primary-foreground: #E5E7EB;
+  --secondary: #1a1a1a;
+  --secondary-foreground: #E5E7EB;
+  --muted: #1a1a1a;
+  --muted-foreground: #9CA3AF;
+  --accent: #1a1a1a;
+  --accent-foreground: #E5E7EB;
+  --destructive: #EF4444;
+  --destructive-foreground: #E5E7EB;
+  --success: #10B981;
+  --success-foreground: #E5E7EB;
+  --border: #333333;
+  --input: #1a1a1a;
+  --ring: #0047ab;
+  --chart-1: #0047ab;
+  --chart-2: #0066FF;
+  --chart-3: #3B82F6;
+  --chart-4: #60A5FA;
+  --chart-5: #82c7ff;
+  --sidebar: #1a1a1a;
+  --sidebar-foreground: #E5E7EB;
+  --sidebar-primary: #0047ab;
+  --sidebar-primary-foreground: #E5E7EB;
+  --sidebar-accent: #1a1a1a;
+  --sidebar-accent-foreground: #E5E7EB;
+  --sidebar-border: #333333;
+  --sidebar-ring: #0047ab;
+  
+  /* CNC Animation Colors - Dark Mode (원래 색상 유지) */
+  --product-raw: #ffffff;
+  --product-raw-border: #c0c0c0;
+  --rail-line: #4a5568;
+  --rail-start: #10B981;
+  --rail-end: #EF4444;
+  --rail-cnc-label: #00d4ff;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  color: var(--text);
+  background: var(--bg);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+button.login-button,
+.login-button {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+button.login-button:hover,
+.login-button:hover {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-color: var(--primary) !important;
+  box-shadow: 
+    0 0 10px var(--neon-glow),
+    0 0 20px var(--neon-glow),
+    0 0 30px var(--neon-glow),
+    inset 0 0 10px var(--neon-glow-subtle) !important;
+  transition: all 0.2s ease;
+}
+
+.signup-button:hover {
+  text-shadow: 
+    0 0 5px var(--neon-glow),
+    0 0 10px var(--neon-glow),
+    0 0 15px var(--neon-glow),
+    0 0 20px var(--neon-glow);
+  transition: all 0.2s ease;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.shadow-premium-3d {
+  box-shadow: 
+    0 8px 32px rgba(37, 99, 235, 0.6),
+    0 4px 16px rgba(59, 130, 246, 0.5),
+    inset 0 2px 4px rgba(96, 165, 250, 0.3),
+    inset 0 -2px 4px rgba(30, 64, 175, 0.4);
+}
+
+.shadow-premium-3d-vertical {
+  box-shadow: 
+    8px 0 32px rgba(37, 99, 235, 0.6),
+    4px 0 16px rgba(59, 130, 246, 0.5),
+    inset 2px 0 4px rgba(96, 165, 250, 0.3),
+    inset -2px 0 4px rgba(30, 64, 175, 0.4);
+}
+
+/* 로그인 페이지 입력란 텍스트 선택 시 테마별 색상 */
+input[type="email"]::selection,
+input[type="password"]::selection,
+input[type="text"]::selection {
+  background-color: var(--primary);
+  color: var(--bg);
+}
+
+input[type="email"]::-moz-selection,
+input[type="password"]::-moz-selection,
+input[type="text"]::-moz-selection {
+  background-color: var(--primary);
+  color: var(--bg);
+}
+
+/* Input 컴포넌트 내부 텍스트 선택 */
+input.input-highlight::selection,
+input.input-highlight::-moz-selection {
+  background-color: var(--primary);
+  color: var(--bg);
+}
+
+/* 페이지 진입 시 위로 슬라이드 애니메이션 */
+@keyframes slideUpIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-up-in {
+  animation: slideUpIn 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.slide-up-in-delay-1 {
+  animation: slideUpIn 0.6s ease-out 0.1s forwards;
+  opacity: 0;
+}
+
+.slide-up-in-delay-2 {
+  animation: slideUpIn 0.6s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.slide-up-in-delay-3 {
+  animation: slideUpIn 0.6s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+.slide-up-in-delay-4 {
+  animation: slideUpIn 0.6s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+.slide-up-in-delay-5 {
+  animation: slideUpIn 0.6s ease-out 0.5s forwards;
+  opacity: 0;
+}
+
+/* transform이 있는 요소용 - wrapper는 opacity만, 내부 요소는 translateY */
+@keyframes slideUpInWrapper {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUpInContent {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-up-wrapper {
+  animation: slideUpInWrapper 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.slide-up-wrapper > * {
+  animation: slideUpInContent 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.slide-up-wrapper-delay-1 {
+  animation: slideUpInWrapper 0.6s ease-out 0.1s forwards;
+  opacity: 0;
+}
+
+.slide-up-wrapper-delay-1 > * {
+  animation: slideUpInContent 0.6s ease-out 0.1s forwards;
+  opacity: 0;
+}
+
+.slide-up-wrapper-delay-2 {
+  animation: slideUpInWrapper 0.6s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.slide-up-wrapper-delay-2 > * {
+  animation: slideUpInContent 0.6s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.slide-up-wrapper-delay-3 {
+  animation: slideUpInWrapper 0.6s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+.slide-up-wrapper-delay-3 > * {
+  animation: slideUpInContent 0.6s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+@keyframes sparkFly {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--spark-x), var(--spark-y)) scale(0);
+  }
+}
+
+/* SKIP 문구 가시성 개선 - 다크 모드 (더 진하게) */
+.dark .skip-text {
+  color: #FFFFFF !important;
+  font-weight: 900 !important;
+  text-shadow: 
+    0 0 25px rgba(0, 102, 255, 1),
+    0 0 35px rgba(0, 102, 255, 1),
+    0 0 45px rgba(0, 102, 255, 0.9),
+    0 5px 10px rgba(0, 0, 0, 1),
+    0 8px 16px rgba(0, 0, 0, 0.95);
+  transition: all 0.3s ease;
+  letter-spacing: 0.02em;
+  opacity: 1 !important;
+}
+
+.dark .skip-text:hover {
+  color: #FFFFFF !important;
+  text-shadow: 
+    0 0 30px rgba(0, 102, 255, 1),
+    0 0 40px rgba(0, 102, 255, 1),
+    0 0 50px rgba(0, 102, 255, 1),
+    0 6px 12px rgba(0, 0, 0, 1),
+    0 10px 20px rgba(0, 0, 0, 0.95);
+}
+
+.dark .skip-text svg {
+  filter: drop-shadow(0 0 20px rgba(0, 102, 255, 1)) 
+          drop-shadow(0 0 30px rgba(0, 102, 255, 1))
+          drop-shadow(0 4px 8px rgba(0, 0, 0, 1));
+  opacity: 1 !important;
+}
+
+/* SKIP 문구 가시성 개선 - 라이트 모드 (네온 효과 완전 제거, 깔끔한 검정색) */
+:root:not(.dark) .skip-text,
+.light .skip-text {
+  color: #000000 !important;
+  font-weight: 900 !important;
+  text-shadow: none !important;
+  transition: all 0.3s ease;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+:root:not(.dark) .skip-text:hover,
+.light .skip-text:hover {
+  color: #000000 !important;
+  text-shadow: none !important;
+}
+
+:root:not(.dark) .skip-text svg,
+.light .skip-text svg {
+  filter: none !important;
+  stroke-width: 2.5;
+  opacity: 1 !important;
+}
+
+:root:not(.dark) .skip-text:hover svg,
+.light .skip-text:hover svg {
+  filter: none !important;
+}
+
+/* SKIP 배경 가시성 개선 - 더 진하게 */
+.dark .skip-background {
+  opacity: 0.85 !important;
+  border-width: 2px !important;
+  border-color: rgba(0, 102, 255, 0.9) !important;
+  background-color: rgba(10, 10, 10, 0.9) !important;
+}
+
+:root:not(.dark) .skip-background,
+.light .skip-background {
+  opacity: 0.95 !important;
+  border-width: 2px !important;
+  border-color: rgba(0, 0, 0, 0.7) !important;
+  background-color: rgba(255, 255, 255, 0.98) !important;
+}
+
+/* 테마 토글 버튼 테두리 가시성 개선 */
+.dark .theme-toggle-button {
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  border-width: 2px !important;
+}
+
+.dark .theme-toggle-button:hover {
+  border-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+:root:not(.dark) .theme-toggle-button,
+.light .theme-toggle-button {
+  border-color: rgba(0, 0, 0, 0.4) !important;
+  border-width: 2px !important;
+}
+
+:root:not(.dark) .theme-toggle-button:hover,
+.light .theme-toggle-button:hover {
+  border-color: rgba(0, 0, 0, 0.6) !important;
+}
+
+/* 대시보드 버튼 테두리 가시성 개선 */
+.dark .dashboard-button {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  border-width: 2px !important;
+}
+
+.dark .dashboard-button:hover {
+  border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+:root:not(.dark) .dashboard-button,
+.light .dashboard-button {
+  border-color: rgba(0, 0, 0, 0.3) !important;
+  border-width: 2px !important;
+}
+
+:root:not(.dark) .dashboard-button:hover,
+.light .dashboard-button:hover {
+  border-color: rgba(0, 0, 0, 0.5) !important;
+}
+

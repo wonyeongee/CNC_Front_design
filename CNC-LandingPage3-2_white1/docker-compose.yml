@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+  frontend:
+    build: .
+    container_name: cnc-frontend
+    ports:
+      - "4001:4001"
+    environment:
+      - NEXT_PUBLIC_API_BASE_URL=http://backend:8080
+    depends_on:
+      - backend
+
+  backend:
+    image: 팀원_백엔드_이미지_이름
+    container_name: backend
+    ports:
+      - "4001:4001"
+    environment:
+      - DATABASE_URL=mysql://foreq:123qwe!@db:3306/fore_q_db
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8
+    container_name: db
+    environment:
+      - MYSQL_DATABASE=dbname
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=pw
+      - MYSQL_ROOT_PASSWORD=pw
